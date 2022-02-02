@@ -1,16 +1,40 @@
 <!doctype html>
-<html xmlns:th="http://www.thymeleaf.org"
-      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-      layout:decorate="~{layout/layout}">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>BOARD</title>
+    <th:block th:replace="/fragment/head"></th:block>
 </head>
-<th:block layout:fragment="content">
+<body>
+    <th:block th:replace="/fragment/nav :: navFragment('board')"></th:block>
+
     <main class="flex-shrink-0">
       <div class="container">
         <h1 class="mt-5">게시판</h1>
+        <div>총 건수 : <span th:text="${#lists.size(boards)}"></span></div>
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">번호</th>
+                <th scope="col">제목</th>
+                <th scope="col">작성자</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr th:each="board : ${boards}">
+                <th th:text="${board.id}">1</th>
+                <td th:text="${board.title}">Mark</td>
+                <td>홍길동</td>
+              </tr>
+            </tbody>
+          </table>        
+          <div class="text-end">
+              <a type="button" class="btn btn-primary" th:href="@{/board/form}">쓰기</a>
+          </div>
+
       </div>
     </main>
-</th:block>
+
+    <th:block th:replace="/fragment/footer :: footerFragment"></th:block>
+</body>
 
 </html>
