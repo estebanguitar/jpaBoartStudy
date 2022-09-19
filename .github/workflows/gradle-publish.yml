@@ -11,11 +11,14 @@ on:
   workflow_dispatch:
     inputs:
       BRANCH:
+        description: 'Branch to use'
         required: true
         default: 'develop'
+        type: choice
         options:
         - develop
         - master
+        
 jobs:
   build:
 
