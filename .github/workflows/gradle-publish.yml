@@ -9,7 +9,13 @@ name: Gradle Package
 
 on:
   workflow_dispatch:
-
+    inputs:
+      BRANCH:
+        required: true
+        default: 'develop'
+        options:
+        - develop
+        - master
 jobs:
   build:
 
