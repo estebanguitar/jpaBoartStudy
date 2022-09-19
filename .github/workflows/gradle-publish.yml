@@ -11,7 +11,7 @@ on:
   workflow_dispatch:
     inputs:
       BRANCH:
-        description: 'Use workflow form'
+        description: 'Use workflow from'
         required: true
         default: 'develop'
         type: choice
