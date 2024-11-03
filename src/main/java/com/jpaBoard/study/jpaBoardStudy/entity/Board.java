@@ -1,5 +1,10 @@
 package com.jpaBoard.study.jpaBoardStudy.entity;
 
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
+import javax.persistence.CascadeType;
+import javax.persistence.OneToMany;
 import lombok.Data;
 
 import javax.persistence.Entity;
@@ -11,14 +16,16 @@ import javax.validation.constraints.Size;
 
 @Entity
 @Data
-
-
 public class Board {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @NotNull
-    @Size(min = 2, max = 30, message = "제목은 2자 이상 30자 이하입니다.")
     private String title;
     private String content;
+    private String thumbnail;
+    private String fileUrl;
+    private Long showCount;
+    private LocalDateTime createdAt;
+    private LocalDateTime updatedAt;
+
 }

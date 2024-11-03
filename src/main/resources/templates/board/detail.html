@@ -1,0 +1,39 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>BOARD</title>
+    <th:block th:replace="/fragment/head"></th:block>
+  <link th:href="@{/css/starter-template2.css}" rel="stylesheet">
+</head>
+<body>
+    <th:block th:replace="/fragment/nav :: navFragment('board')"></th:block>
+
+    <div class="container">
+      <!-- 게시판 제목 -->
+      <header class="header">
+        <h1 class="title" th:text="${board.getTitle()}">영상 제목을 여기에 표시</h1>
+        <p class="subtitle" th:text="|게시일: ${board.getCreatedAt()} / 조회수: ${board.getShowCount()}회| ">게시일: 2024년 11월 4일 | 조회수: 123회</p>
+      </header>
+
+      <!-- 동영상 플레이어 영역 -->
+      <section class="video-section" th:utext="${board.getFileUrl()}">
+<!--        <video controls class="video-player">-->
+<!--          <source src="sample-video.mp4" type="video/mp4">-->
+<!--          동영상 재생을 지원하지 않는 브라우저입니다.-->
+<!--        </video>-->
+      </section>
+
+      <!-- 콘텐츠 영역 -->
+      <section class="content-section">
+        <h2>영상 설명</h2>
+        <p class="content" th:text="${board.getContent()}">
+          이곳에 영상의 내용을 설명하는 텍스트가 들어갑니다. 해당 영상에 대한 설명이나 리뷰, 그리고 추가 정보들을 여기에 상세하게 작성할 수 있습니다.
+        </p>
+      </section>
+    </div>
+
+
+      <th:block th:replace="/fragment/footer :: footerFragment"></th:block>
+</body>
+
+</html>

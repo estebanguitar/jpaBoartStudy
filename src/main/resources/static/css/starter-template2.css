@@ -1,0 +1,116 @@
+/* 기본 스타일 설정 */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  margin: 0;
+  padding: 0;
+}
+
+/* 컨테이너 설정 */
+.container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 10px;
+  margin-top: 5%;
+}
+
+/* 게시판 제목 */
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+.subtitle {
+  color: #666;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+/* 동영상 플레이어 스타일 */
+.video-section {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.video-player {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 콘텐츠 영역 스타일 */
+.content-section {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  margin-bottom: 20px;
+}
+
+.content-section h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.content {
+  font-size: 16px;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* 댓글 영역 스타일 */
+.comments-section {
+  border-top: 1px solid #ddd;
+  padding-top: 20px;
+}
+
+.comments-section h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.comments-list {
+  list-style: none;
+  margin-bottom: 20px;
+}
+
+.comment {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  font-size: 15px;
+}
+
+.comment-input {
+  width: 100%;
+  padding: 12px;
+  font-size: 14px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.comment-button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.comment-button:hover {
+  background-color: #0056b3;
+}

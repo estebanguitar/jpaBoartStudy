@@ -7,34 +7,19 @@
 <body>
     <th:block th:replace="/fragment/nav :: navFragment('board')"></th:block>
 
-    <main class="flex-shrink-0">
-      <div class="container">
-        <h1 class="mt-5">게시판</h1>
-        <div>총 건수 : <span th:text="${#lists.size(boards)}"></span></div>
-        <table class="table">
-            <thead>
-              <tr>
-                <th scope="col">번호</th>
-                <th scope="col">제목</th>
-                <th scope="col">작성자</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr th:each="board : ${boards}">
-                <th th:text="${board.id}">1</th>
-                <td><a th:text="${board.title}" th:href="@{/board/form(id=${board.id})}">Mark</a></td>
-                <td>홍길동</td>
-              </tr>
-            </tbody>
-          </table>        
-          <div class="text-end">
-              <a type="button" class="btn btn-primary" th:href="@{/board/form}">쓰기</a>
+    <div class="container">
+      <div class="video-list">
+        <!-- 비디오 카드 1 -->
+        <div class="video-card" th:each="board : ${boards}" th:onclick="|location.href='@{/board/detail(boardId=${board.id})}'|">
+          <img th:src="${board.getThumbnail()}" alt="Thumbnail 1" class="thumbnail">
+          <div class="video-info">
+            <p class="title" th:text="${board.getTitle()}"></p>
+            <p class="description" th:text="${board.getContent()}"></p>
           </div>
-
+        </div>
       </div>
-    </main>
+    </div>
 
     <th:block th:replace="/fragment/footer :: footerFragment"></th:block>
 </body>
-
 </html>
