@@ -16,7 +16,7 @@
       </header>
 
       <!-- 동영상 플레이어 영역 -->
-      <section class="video-section" th:text="${board.getFileUrl()}">
+      <section class="video-section" th:utext="${board.getFileUrl()}">
 <!--        <video controls class="video-player">-->
 <!--          <source src="sample-video.mp4" type="video/mp4">-->
 <!--          동영상 재생을 지원하지 않는 브라우저입니다.-->
@@ -26,7 +26,7 @@
       <!-- 콘텐츠 영역 -->
       <section class="content-section">
         <h2>영상 설명</h2>
-        <p class="content" th:utext="${board.getContent()}">
+        <p class="content" th:text="${board.getContent()}">
           이곳에 영상의 내용을 설명하는 텍스트가 들어갑니다. 해당 영상에 대한 설명이나 리뷰, 그리고 추가 정보들을 여기에 상세하게 작성할 수 있습니다.
         </p>
       </section>
