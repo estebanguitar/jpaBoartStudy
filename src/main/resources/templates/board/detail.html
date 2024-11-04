@@ -2,11 +2,11 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>BOARD</title>
-    <th:block th:replace="/fragment/head"></th:block>
+    <th:block th:replace="fragment/head"></th:block>
   <link th:href="@{/css/starter-template2.css}" rel="stylesheet">
 </head>
 <body>
-    <th:block th:replace="/fragment/nav :: navFragment('board')"></th:block>
+    <th:block th:replace="fragment/nav :: navFragment('board')"></th:block>
 
     <div class="container">
       <!-- 게시판 제목 -->
@@ -33,7 +33,7 @@
     </div>
 
 
-      <th:block th:replace="/fragment/footer :: footerFragment"></th:block>
+      <th:block th:replace="fragment/footer :: footerFragment"></th:block>
 </body>
 
 </html>
