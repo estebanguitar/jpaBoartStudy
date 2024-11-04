@@ -2,6 +2,7 @@ package com.jpaBoard.study.jpaBoardStudy.controller;
 
 import com.jpaBoard.study.jpaBoardStudy.entity.Board;
 import com.jpaBoard.study.jpaBoardStudy.repsitory.BoardRepository;
+import java.util.ArrayList;
 import java.util.List;
 import lombok.AllArgsConstructor;
 import org.springframework.data.crossstore.ChangeSetPersister.NotFoundException;
@@ -20,8 +21,14 @@ public class BoardController {
 
     @GetMapping("/list")
     public String list(Model model, @RequestParam(required = false) String keyword) {
-        List<Board> boards = boardRepository.findAll();
+        List<Board> boards;
+        if (keyword == null) {
+            boards = boardRepository.findAll();
+        } else {
+            boards = boardRepository.findByTitleContainingOrContentContaining(keyword, keyword);
+        }
         model.addAttribute("boards", boards);
+        model.addAttribute("keyword", keyword);
         return "board/list";
     }
     @GetMapping("/detail")
